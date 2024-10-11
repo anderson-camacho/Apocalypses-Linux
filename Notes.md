@@ -57,7 +57,7 @@ En Linux, para instalar o actualizar programas, se usan **gestores de paquetes**
 Con estos gestores, puedes instalar programas fácilmente desde la terminal. Por ejemplo, en Ubuntu, para instalar algo usarías:  
 ```bash
 sudo apt install nombre_del_programa
-
+```
 ## Uso básico de la terminal
 
 Linux se puede usar tanto desde la **terminal** como con un entorno gráfico (escritorio). Aquí algunos comandos básicos para empezar:
@@ -65,4 +65,4 @@ Linux se puede usar tanto desde la **terminal** como con un entorno gráfico (es
 - **Ver el contenido de un archivo**:
   ```bash
   cat archivo.txt
-
+  ```
