@@ -1,405 +1,82 @@
-https://shyanjmc.com/informatica-apocalipsis/9-linux.html
 
-https://rockylinux.org/es/download
+Memoria actualizada
+Aquí tienes una versión reescrita e informal del contenido solicitado, utilizando recursos de Markdown y adaptada para que sea fácil de entender:
 
+Sistemas Operativos Linux - Informática a prueba del apocalipsis
+Introducción a Linux
+Un sistema operativo Linux es un sistema de código abierto (open source). Esto significa que su código fuente está disponible para que cualquiera lo use, modifique y lo mejore. Al ser open source, muchas distribuciones son gratuitas (excepto algunas, como Red Hat Enterprise Linux). Además, la mayoría de estas distribuciones usan componentes del proyecto GNU.
 
-1. Introducción
-2. Radiación electromagnética
-3. Creación de antenas
-4. Generación de energía y Generadores eléctricos
-5. Arquitectura computacional
-6. Sistemas ARM
-7. Codificación electrónica
-8. Documentación
-9. Sistemas Operativos Linux
-10. Sistemas Operativos BSD
-11. Bibliotecas estándar
-12. Repositorios de software
-13. Repositorios de código
-14. Redes
-15. Sistemas de archivos
-16. Seguridad
-17. Clústeres
-18. Lenguajes de programación - Automatización
-19. Inteligencia Artificial local
+Historia de Linux
+La historia de Linux comienza en 1983 cuando Richard Stallman (sí, el mismo de GNU) inició el proyecto para crear una versión de un sistema operativo similar a Unix, pero open source. Este proyecto se llamó GNU y su objetivo era que el software fuera libre para todos.
 
+Aunque GNU avanzó, le faltaba el componente más importante: el kernel (el núcleo del sistema). Y aquí entra nuestro amigo Linus Torvalds. En 1991, Linus, durante sus estudios en la Universidad de Helsinki, desarrolló el kernel Linux. Al combinar GNU con el kernel Linux, nació lo que hoy conocemos como un sistema operativo Linux.
 
-Informatica a prueba del apocalipsis
-  
-Sistemas Operativos Linux
-Un sistema operativo Linux es un sistema de fuentes abiertas (“open source”; su código fuente se encuentra disponible para su uso, modificación, auditoría y compilación libre) que se caracteriza por utilizar como kernel a Linux.
+Arquitectura de un sistema Linux
+Un sistema Linux sigue una estructura de directorios muy organizada, basada en el antiguo esquema de Unix. Aquí algunos directorios clave que te interesa conocer:
 
-Al ser open source las distribuciones que se ofrecen suelen ser gratuitas (salvo excepciones como; Red Hat Enterprise Linux ) y la mayoría utilizan los componentes de usuario del proyecto GNU.
-
-Historia
-La historia comienza en 1983 cuando Richard Matthew Stallman (16-03-1953) empieza en el laboratorio de inteligencia artificial del MIT (Massachusetts Institute of Technology) el proyecto GNU para escribir una versión de un sistema operativo de tipo Unix (Unix; el primer sistema operativo portable de la historia, escrito en el lenguaje de programación C que fue creado para eso mismo) que sea open source con una licencia que obligue que se mantenga así (para evitar que organizaciones o grupos puedan tomar control).
-
-En 1984 se va de su trabajo en el MIT para dedicarse a tiempo completo al proyecto GNU.
-
-Stallman en el 2019
-
-Stallman no solo creó el proyecto GNU (dato curioso; en español se dice “ÑU” y Stallman habla un español casi perfecto) si no que también fundó el movimiento de software libre (“free software movement”) el cual aboga por que el software tenga las libertades para que sus usuarios puedan utilizar, modificar y distribuir el mismo como deseen (de ahí que la primera regla es que el código fuente esté disponible, y como segunda regla que se mantenga así en el tiempo).
-
-Entre los componentes que Stallman y su equipo han desarrollado con el tiempo están; el compilador GCC, el editor de texto Emacs, el set coreutils (ls, cp, dd, dir, mkdir, etc), el automatizador de construcción “make”, entre muchos otros.
-
-Sin embargo, escribir un sistema operativo al completo es muy dificil y el proyecto GNU tenía una estructura de micro servidores (al igual que la filosofía del sistema Unix; un programa hace una sola tarea y la hace bien) por lo que en un momento les faltaba el componente más importante de todos; el kernel. Y ahí es donde entra nuestro segundo protagonista; Linus Torvalds.
-
-Linus Torvalds
-
-Linus Torvalds (28-12-1969), en 1991, durante sus estudios en la Universidad de Helsinki se hizo con una máquina clon de la IBM PC con un Intel 80386. Luego de conseguir el libro “Sistemas Operativos; diseño e implementación” de Andew Tanenbaum empezó a trabajar en su tesis de grado, llamada; “Linux: Un sistema operativo portable”.
-
-Una vez que el kernel Linux se empezó a distribuir con el software de GNU para tener un sistema en conjunto utilizable se empezó un camino de evolución, desarrollo y adaptaciones que hoy en día es dificil de determinar que depará el futuro.
-
-Arquitectura
-Todas las distribuciones (sistemas operativos completos y funcionales) del kernel Linux incluyen este último y software de uso básico para permitir un mínimo de funcionalidad. Pero no todas las distribuciones incluyen las mismas versiones de los programas ni tampoco el mismo set de software incluido.
-
-Por lo tanto acá hablaremos del software básico y estructura para que el sistema operativo sea usable.
-
-Organización
-
-Un sistema no puede funcionar sin una organización.
-
-Las distribuciones Linux utilizan el esquema de organización por carpetas (llamadas “directorios”) del sistema Unix, aunque como todo evoluciona en este mundo hay algunos cambios desde entonces. Se debe recordar que puede haber diferencias entre algunas distribuciones;
-
-Directorio	Acceso directo a (“enlace”)	Propósito
-/boot	-	Almacena el núcleo. En sistemas MBR almacena al cargador de arranque (“bootloader”).
-/efi	-	En sistemas GPT almacena el archivo efi con la firma e instrucciones del cargador de arranque (“bootloader”).
-/bin	/usr/bin	Almacena los binarios que originalmente estaban destinados al usuario root o como base del sistema. Hoy está fusionado con el directorio que contiene los binarios de los usuarios.
-/dev	-	Abreviatura de “devices”. Almacena en archivos y carpetas todos los dispositivos físicos y virtuales que halla reconocido el kernel. Los archivos con la información del hardware reconocido los crea programas como; mdev, udev, eudev, etc.
-/etc	-	Almacena los archivos de configuración de los programas.
-/home	-	Almacena los archivos y carpetas de cada usuario no root (administrador) en subcarpetas con los nombres de esos usuarios (ejemplo; /home/pepe, /home/luis, etc).
-/lib	/usr/lib	Almacena todas las librerias utilizadas por otros programas (llamadas; “shared object” con extensión “.so”) para determinadas funcionalidades.
-/lib64	/usr/lib	Idem a /lib pero con librerías de 64 bits.
-/mnt	-	Abreviatura de “mount”. Almacena en subdirectorios todos los puntos de montaje de dispositivos de almacenamiento externos (como pendrives) para su uso.
-/opt	-	No siempre se usa/existe, pero es una vieja convención de uso de los Unix de AT&T, Sun y DEC para almacenar los programas que no son parte del sistema base.
-/proc	-	Abreviatura de “processes”. Almacena en archivos toda la información de los procesos en funcionamiento así como muchos módulos cargados. Los procesos se encuentran separados por número de proceso.
-/root	-	Carpeta personal (home) del usuario root (administrador) del sistema operativo.
-/run	-	Remplaza a /var/run. Es un punto de montaje que se crea en etapas tempranas del inicio del sistema para que los programas tengan un lugar temporal donde escribir información.
-/sbin	/usr/bin	Abreviatura de “super bin”. Almacena los binarios que estaban destinados a ser usados solamente por el usuario root para administrar el sistema.
-/srv	-	Abreviatura de “served”. Se utiliza principalmente en los RedHat Enterprise Linux y se usa para los archivos públicos de los servicios FTP, CSV o WWW que dé el sistema.
-/sys	-	Es un punto de montaje que crea el kernel. Acá se encuentran archivos que sirven como interface para que un programa se pueda comunicar con el kernel directamente. Suelen contener la dirección hexadecimal en memoria para hacer eso.
-/tmp	-	Abreviatura de “temporal”. Acá van archivos y carpetas temporales que no hay problema si se eliminan.
-/usr	-	Abreviatura de “user”. Acá van los binarios, archivos y carpetas de los programas instalados por los usuarios.
-/var	-	Abreviatura de “variable”. Acá va todo lo que el sistema usa pero que cambia constantemente, no información temporal si no información cambiante (como la caché).
+Directorio	Descripción
+/boot	Almacena el kernel y el cargador de arranque.
+/bin	Contiene los programas esenciales del sistema.
+/home	Carpeta personal de cada usuario (ejemplo: /home/anderson).
+/lib	Guarda las bibliotecas necesarias para los programas.
+/proc	Información sobre los procesos en ejecución.
+/usr	Aquí van los programas instalados por los usuarios.
 Kernel Linux
+El kernel es el corazón del sistema operativo, el que se encarga de gestionar los recursos (memoria, CPU, etc.). Linux usa un macrokernel, lo que significa que se ocupa de un montón de tareas, desde la gestión de archivos hasta la seguridad del sistema. Para evitar que el kernel sea pesado, se usan módulos que se cargan solo cuando son necesarios.
 
-El kernel (núcleo) del sistema operativo es el componente más importante de todos.
-
-Las funcionalidades más esenciales son las de controlar cuanto tiempo se ejecuta un programa en el procesador y que tenga asignada una porción de la memoria RAM para su uso. A lo primero se le denomina “scheduler” y al segundo “memory management”. A este tipo de núcleos básicos se les llama “micro kernel”.
-
-Pero Linux no es un micro kernel, si no un “macrokernel” con capacidad híbrida. Esto quiere que el núcleo tiene monopolizado toda una batería de funcionalidades; desde el sistema de archivos, pasando por la comunicación entre procesos hasta la seguridad de todo el sistema.
-
-Como el kernel es el encargado de utilizar los “drivers” para poder manejar un dispositivo físico de forma apropiada, a mayor cantidad de drivers en un núcleo monolítico más pesado se vuelve, más potencia de cómputo requiere y más memoria RAM consume. Para evitar esto, los núcleos monolíticos desarrollaron los “módulos”; la capacidad de separar partes de si mismos en archivos separados para solamente cargar los cuando se los necesite. Generalmente los módulos (tanto en Linux como en MacOS y los BSD) tienen por extensión “.ko” (kernel object).
-
-Los módulos del kernel linux se almacenan en;
-
-/lib/modules/[kernel_version]
-
-A modo resumido podemos definir el proceso de inicio del kernel como;
-
-
+Los módulos del kernel se guardan en /lib/modules/[versión_del_kernel].
 
 Librería C estándar
+Esta librería (C standard library) permite que el sistema y los programas interactúen fácilmente. Básicamente, es un conjunto de funciones ya listas para usar, que hacen que el sistema sea más fácil de programar.
 
-Esto tiene tanto influencia histórica como justificación técnica.
+En Linux, hay varias versiones de la librería C: MUSL (ligera y rápida), GLibC (la más completa) y uClibc (optimizada para sistemas embebidos).
 
-Empecemos por la clase de historia; Unix fue el primer sistema operativo portable en 1969, en el que se creó el lenguaje de programación C (descanse en paz Dennis Ritchie) para que fuese fácilmente portable a otros ecosistemas de hardware. Como tal, su núcleo exponía funcionalidades mediante una A.P.I. (Application Programming Interface) para que el resto de programas pudieran realizar acciones (ósea; funcionar) sin tener que reinventar la rueda, el fuego y el capitalismo.
-
-Como en diferentes versiones del núcleo puede variar las formas de hacer diferentes acciones (acceder a un archivo, modificarlo, borrarlo, leer metadatos, etc) o simplemente realizar una acción tan simple como imprimir algo en pantalla puede ser muy complejo, entonces la librería estándar viene a proveer un nivel de abstracción a la complejidad de hacer determinadas llamadas al núcleo del sistema (de ahí la palabra; syscall).
-
-Quizás ya se dió cuenta que tiene “C” en el nombre por que estaba creada en ese lenguaje de programación (por el núcleo de Unix). En los Linux y BSD sigue en ese lenguaje.
-
-En Linux tenemos; MUSL (minimalista y rápido), GLibC (trata de implementar todos los estándares relevantes de C) y uClibc (optimizado para sistemas embebidos).
-
-Además la librería estándar viene a implementar una segunda ventaja a raiz de la abstracción que da; si en dos sistemas diferentes, se respeta y utiliza el mismo estándar del lenguaje C/C++ a la hora de programar o de realizar cosas, entonces muy probablemente el código fuente sea portable entre esos sistemas. Esto es la razón de que muchas aplicaciones tengan muchísimo nivel de compatibilidad entre sistemas como Linux o BSD, o que inclusive entre diferentes sistemas BSD (FreeBSD, OpenBSD, etc) la compatibilidad se mantenga alta.
-
-El motivo anteriormente dicho, y que históricamente hay muchos estándares e implementaciones del lenguaje C, es que algunas personas sostienen que C y C++ no son lenguajes como tal, si no estándares que pueden ser implementados. No voy a meterme en eso.
-
-Sysinit
-
-Una vez que el núcleo del sistema se inicia, carga el archivo “/sbin/init”.
-
-El inicializador del sistema se encarga de ir cargando todos los servicios (denominados; “daemons”) para que quede usable a los usuarios (tanto locales como remotos).
-
-A lo largo de la historia han existido, y existen, diversos sysinits dependiendo de la distribución utilizada. Entre algunos de ellos tenemos que se usan hoy en día;
-
-SysVinit
-
-Este es uno de los más antiguos. Utiliza el mismo esquema que los sistemas BSD y los Unix, en donde se usan archivos de configuración y scripts de shell para iniciar determinados daemons de fondo.
-
-No cuenta con capacidades de iniciar servicios en forma paralela.
-
-Lo usan principalmente; Devuan y Slackware Linux.
-
-OpenRC
-
-Creado por Roy Marples (del proyecto NetBSD) es un init muy parecido a SysVinit pero más avanzado ya que posee capacidades de paralelismo, supervisión (si un proceso falla o se detiene puede reiniciarlo), condicionales (“iniciar o no iniciar X servicio si Z cosa”), limitar recursos a los servicios, separar la configuración del script, entre muchas otras capacidades.
-
-Lo usan principalmente; Alpine Linux, Funtoo, Gentoo, Nitrux, entre otros. Es compatible con FreeBSD y NetBSD también.
-
-SystemD
-
-Creado por Lennart Poettering y Kay Sievers en RedHat.
-
-Es un conjunto de daemons, bibliotecas y herramientas. SystemD es tan grande que creó un montón de discusiones a lo largo y ancho de la red; no respeta la filosofía Unix de KISS (“Keep It Simple Stupid”) en hacer una cosa y hacerla bien, superando por mucho las responsabilidades básicas de un sysinit.
-
-Lennart lo describe no solamente como un administrador de sistema y servicios, si no también como una plataforma de desarrollo de software y de conexión entre las aplicaciones y el núcleo Linux.
-
-A nivel de capacidades, SystemD expande un poco más lo que ya ofrece OpenRC y le añade los “sockets”; un socket de tipo Unix corresponde a la capacidad de que un programa le envie información a ese archivo (ubicados en; /run) en formato binario, cuando SystemD detecta esto ejecuta ese programa pasandole esa información recibida y luego lo finaliza. Esto da la ventaja de que el programa objetivo no tiene que estar en ejecución todo el tiempo, solamente cuando sea necesario.
-
-Cabe aclarar que los sockets de tipo Unix no son nuevos o vinieron con SystemD, pero sí fueron implementados en el init del sistema con este framework.
-
-Lo usan principalmente; Debian, Ubuntu, Fedora, RedHat Enterprise, Arch, Solus, entre otros. Solamente es compatible con el kernel Linux.
-
-User land
-
-El espacio de usuario (“userland” en inglés) corresponde a todos los programas, librerías y archivos que están a disposición del usuario (tanto el administrador como el que no lo es) para su uso. Básicamente son todos los programas que vos usas en tu día a día, con la diferencia técnica de que esos programas necesitan el kernel y el init para funcionar.
-
-Como tal no es el mismo userland en sistemas embebidos dentro del rober Perseverance en Marte que el que estás usando en tu notebook, cada necesidad requiere programas diferentes.
-
-Por poner pocos ejemplos, Alpine Linux utiliza el userland de BusyBox con el gestor de paquetes “apk” mientras que Arch Linux utiliza el userland de GNU llamado “coreutils” con el gestor de paquetes “pacman” y la shell (el programa para ejecutar comandos)“bash”.
-
-Gestor de paqueteria
-
-Pocos sistemas operativos sirven si no tienen la capacidad de instalar programas adicionales.
-
-En la mayoría de los sistemas tenemos dos formas de instalar programas adicionales; compilando el código fuente o instalar binarios pre-compilados anteriormente.
+Gestores de paquetes
+En Linux, para instalar o actualizar programas, se usan gestores de paquetes. Dependiendo de la distribución, tendrás uno u otro. Aquí algunos ejemplos:
 
 Distribución	Gestor de paquetes
-Debian (Debian, Ubuntu, Mint, Kali, etc)	apt
-Fedora (RedHat, CentOS Stream, Rocky Linux, etc)	dnf
-Arch (Endeavour, Manjaro, etc)	pacman
-Alpine	apk
-Gentooo (Funtoo, Pentoo)	portage
-Uso
-El uso de un sistema Linux puede variar desde simplemente usar comandos desde la shell, hasta tener un entorno de escritorio completo (Gnome, KDE, Xfce, Budgie, etc) y usarlo para navegar por internet, editar documentos, jugar en Steam (mediante Proton para ejecutar juegos de Windows) y programar.
-
-Para ambos casos acá vamos a usar la terminal (programa que simula las terminales antiguas y que ejecuta la shell), dependiendo del entorno de escritorio que uses será gnome-terminal (Gnome), konsole (KDE) u otros.
-
-Primero empecemos por que puedas identificar donde estas parado;
-
-/usr/lib/firefox/firefox
-La carpeta “firefox” se encuentra dentro de la carpeta “firefox”, esta se encuentra en la carpeta “lib” y esta se encuentra dentro de la carpeta “usr” en la raíz del sistema (“/”).
-
-Cuando la especificación de donde está un directorio (carpeta) o archivo está de forma completa y con la raíz del sistema al inicio de todo se dice que es; “path abosluto”.
-
-En cambio;
-
-Documentos/Informatica_a_prueba_del_apocalipsis/notas.txt
-Sabemos que el archivo “notas.txt” está dentro de la carpeta “Informatica_a_prueba_del_apocalipsis”, y esta dentro de la carpeta “Documentos”. Pero como “Documentos” no tiene otros directorios o carpetas especificados antes, ni tampoco el “/” que indique la raíz del sistema, entonces se llama “path relativo”. Es “relativo” por que la ubicación de “Documentos” va a depender de donde estés ubicado.
-
-Nota
-El símbolo; “~” indica la carpeta “home” del usuario que está ejecutando el documento. Si el usuario es “root” (el administrador) es; “/root”, si el usuario no es root entonces suele estar ubicado en; “/home/[usuario]”
-Entonces usando la shell pones los comandos (ordenes que le das) y sus argumentos. Un argumento son las “opciones” que le pasas a un programa que modifica su comportamiento por defecto, tranquilo/a ahora entramos en detalle para que no te pierdas.
-
-En una gran cantidad de sistemas (no solo Linux) tenemos el comando “ls” (de; list). El comando lo que hace es listar todos los archivos y carpetas que hay donde estás ubicado;
-
-
-
-Pero si le pasamos como argumento un directorio (sea path absoluto o relativo) nos lista todo lo que se encuentre ahí;
-
-
-
-Como se puede evidenciar superiormente;
-
-Pasamos el argumento con path absoluto; “/usr” y nos muestra lo que contiene.
-Pasamos el argumento con path relativo; “var/” y al existir esa carpeta dentro de donde estamos, nos muestra el contenido.
-Pasamos el argumento con path relativo; “Documentos” y al no existir esa carpeta dentro de donde estamos, nos muestra un mensaje de error diciendo tal.
-Dependiendo del programa podemos tener desde unos pocos, hasta cientos de argumentos que usar para modificar el comportamiento del programa y lo que nos devuelve.
-
-Tipos de argumento
-En todos los sistemas donde puedas insertar comandos tenes dos tipos de argumentos;
-
-Los que son propios de como trata la información el comando
-
-Este tipo de argumento permite modificar como va a tratar la información externa que recibe. Pueden combinarse.
-
-Siguiendo con el comando “ls”, si le pasas el argumento “-l” entonces el listado de archivos y directorios lo mostrará en un formato de “lista” indicando el sistema de permisos, la fecha de modificación, el propietario, el grupo y el peso el bits. Si añadis el argumento “-h” entonces el peso en bits se mostrará en un formato de kilobytes, megabytes, etc por lo que debe usarse en conjunto con “-l”. Y, como último ejemplo, si añadis el argumento “-a” mostrará además los directorios y archivos que están ocultos (que tienen delante de su nombre un punto; “.”).
-
-Acá ejemplos;
-
-Argumentos de ls en Alpine/BusyBox
-
-Algunos de los argumentos de ls en Arch/Coreutils
-
-Siempre puedes ver los argumentos de un programa mediante el argumento; “--help” ó “-h”.
-
-Los argumentos operativos por usuario/a
-
-Este tipo de argumentos son los que se usan para operar de forma normal.
-
-Si queres listar no solamente lo hay donde estas ubicado/a si no de otra carpeta, le indicas tal a “ls”. Si queres que Firefox o Chromium abra directamente una web para ahorrarte introducirla, por terminal se lo indicas. Y así consecutivamente con otros programas;
-
-
-
-Comandos
-Cuando vos indicas un comando por terminal, sea con argumentos o no, estás ejecutando un programa que puede estar en una determinada ubicación. Por ende, no todos los sistemas tienen los mismos programas (y por ende comandos).
-
-Entonces, entendiendo que lo que estás haciendo es ejecutar progrmas con determinadas opciones, tenes que tener siempre en consideración que el programa “X” al que estás acostumbrado a ejecutar siempre para hacer una determinada tarea no necesariamente va a estar en un Alpine, Rocky, RedHat, Debian o la distro que sea. Esto pasa mucho con los editores de texto por terminal; nano, micro y neovim no suelen venir instalados en los linux empresariales como SUSE, RedHat, Rocky, etc.
-
-Personalmente siempre recomiendo que se acostumbren al estándar de facto en la mayoría de las distribuciones Linux; coreutils. El cual es un paquete que trae montones de programas para realizar las funcionalidades básicas en todo sistema operativo.
-
-Como vimos en la parte de “Arquitectura” según la distribución que se esté usando, el gestor de paquetes será uno u otro. Y también si tenés o no permisos de “root” para poder instalar o desinstalar programas.
-
-Veamos comandos básicos;
-
-Ver el contenido de un archivo
-cat [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-Ver el contenido de un directorio
-ls [path_absoluto_o_relativo_al_directorio]
-
-Buscar una palabra literal en un archivo
-grep [palabra_a_buscar] [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-Buscar una palabra sin considerar mayúsculas/minúsculas (“no case sensitive”) en un archivo
-grep -i [palabra_a_buscar] [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-Ahí pueden ver que el argumento “-i” es para deshabilitar el case sensitive.
-
-Buscar una palabra literal en todos los archivos y subcarpetas que hay en un directorio
-grep -r [palabra_a_buscar] [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-Grep tiene muchos argumentos, use el argumento de ayuda para ver el resto y poder combinarlos
-
-Encontrar un archivo o carpeta por nombre dentro de la ubicación “X”
-find [X] -name [nombre]
-
-Encontrar un archivo por nombre dentro de la ubicación “X”
-find [X] -name [nombre] -type file
-
-Encontrar el nombre de un directorio dentro de la ubicación “X”
-find [X] -name [nombre] -type d
-
-Se puede usar el argumento “iname” en vez del argumento “name” para desactivar el case sensitive.
-
-La salida/retorno (osea lo que muestra) del comando “X” guardarlo en un archivo
-[X] > [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-La salida/retorno de los errores del comando “X” guardarlo en un archivo
-[X] 2> [path_absoluto_o_relativo_al_archivo]/[archivo]
-
-La salida/retorno del comando “X” enviarlo al programa “Z” como entrada de información
-[X] | [Z]
-
-Esto se usa mucho para pasar información entre programas y automatizar ciertos procesos. Dependiendo de la shell que se esté usando coportará tantos pipelines ( el símbolo; “|”), bash soporta cinco (5).
-
-Por ejemplo; ejecuto el comando “find” para encontrar un archivo y con el pipeline se lo paso a “cat” o “grep” para mostrar o buscar dentro de él.
-
-Imprimir un mensaje en la pantalla
-/usr/sbin/echo [mensaje]
-
-Tenga en consideración que si usa la shell bash, si no indica el path absoluto de “echo” (ósea; /usr/sbin) se va a ejecutar una versión embebida de ese comando que tiene bash, por lo que ambos son distintos programas.
-
-Mostrar las variables de entorno y sus valores (separados por “=”)
-env
-
-La variable de entorno “PATH” indica los lugares (por path absoluto y separados por “:”) donde se debe buscar un programa cuando no se indica el path absoluto de un binario a ejecutar.
-
-Imprimir el valor de una variable de entorno específica
-/usr/sbin/echo $[variable_de_entorno]
-
-Copiar a otra ubicación
-cp [archivo_fuente] [archivo_destino]
-
-Si se usa el argumento “ -r “ entonces se puede usar con carpetas también.
-
-Mover carpeta o directorio a otra ubicación
-mv [fuente] [destino]
-
-Esto se utiliza también para renombrar. Si estás copiando un archivo y en destino indicas otro nombre distinto en vez de un directorio se va a renombrar al que indicas.
-
-Lo mismo para las carpetas/directorios.
-
-Prácticas y documentación
-Seamos humildes y sinceros; podes estar años con sistemas Unix (Linux, BSD, etc) y estar cómodo con la shell, pero no necesariamente te vas a saber arreglar con todos los comandos que existen/existirán.
-
-Por eso, al Cesar lo que es del Cesar, te dejo acá una web en inglés con excelentes documentaciones sobre como realizar acciones que te pueden servir para administrar tu sistema o un servidor;
-
-Página web de LinuxHandbook.com
-Seguridad estratégica
-La seguridad en los sistemas Linux es un tema ampliamente discutido. Abordaremos en este capítulo el tema desde una perpectiva estratégica, para luego en el capítulo “Seguridad” hacerlo desde la operacional y táctica;
-
-Distribución
-
-¿Elegiremos una distribución que libere versiones específicas (‘Fixed Release’) ó elegiremos una distribución que se actualice constantemente a la última versión (‘Rolling Release’)?
-
-Las distribuciones ‘Fixed Release’ tienen la característica de que no reciben las actualizaciones y últimas versiones de los programas apenas salen, si no que pasan por un proceso estricto interno de pruebas, parches y final liberación para garantizar una estabilidad e integración mayor de los programas.
-
-Por un lado, las ‘Fixed Release’ tienen las ventajas de ser más estables y tener una empresa detrás pero se tiene la desventaja de quedarse con un sistema obsoleto si cuando vence el soporte no se realiza una actualización a una versión más nueva (generalmente este proceso debería ser simple como; cambiar los repositorios hacia los nuevos y realizar la actualización del sistema, pero ya sabemos todos el miedo y respeto que da trabajar con un sistema así).
-
-Entre las distribuciones más populares ‘Fixed Release’ tenemos;
-
-Distribución	Propósito
-Red Hat Enterprise Linux	Empresarial general
-SUSE Enterprise Linux	Empresarial general
-Rocky Linux	Clon binario de RedHat Enterprise
-Oracle Linux	Clon binario de RedHat Enterprise
-Debian Linux	Empresarial y general
-Ubuntu Linux	Empresarial (versiones LTS) y general
-Fedora Linux	General, principalmente usuarios finales
-OpenWRT	Routers y Modems
-En cambio las distribuciones ‘Rolling Release’ tienen las características de no poseer versiones específicas, si no que existe una general que se actualiza constantemente con paquetes nuevos de forma constante y muy rápidamente apenas ha salido una versión nueva de sus paquetes, así como ser proyectos que generalmente son mantenidos por una comunidad entregada y sin intereses corporativos/monetarios. Tienen la ventaja de que nunca serán “obsoletas”, ya que un simple “update” las pondrá al día, pero tienen la desventaja de que generalmente (no siempre) al entregar los paquetes nuevos más rápidamente que en las ‘Fixed Release’ a veces se pueden pasar errores por alto que ocasionen un problema en el sistema (como actualizar Python de 3.11 a 3.12 y que programas como Azure CLI dejen de funcionar).
-
-Entre las distribuciones más populares ‘Rolling Release’ tenemos;
-
-Distribución	Propósito
-Arch Linux	General
-Alpine Linux	General
-Manajro Linux	General
-Kali Linux	Pentesting
-Parrot Linux	Pentesting
-Rhino Linux	General
-Gentoo Linux	General
-En base a esto debemos considerar todas las implicancias de una elección u otra. Dependiendo del uso que tengamos podemos estar limitados a una selección u otra;
-
-Si los servidores van a formar parte de un clúster de Kubernetes deberemos ir por una Fixed Release.
-
-Si vamos a usar contenedores standalone de una forma bien prolija podemos usar como base un sistema Rolling Release con las aplicaciones que necesitemos en contenedores Fixed Release.
-
-Arquitectura
-
-El kernel Linux al ser la pieza de software con mayor evolución en la historia de la humanidad da un soporte a una enorme selección de hardware.
-
-Realmente la cantidad de drivers que tiene para soportar arquitecturas y dispositivos es gigante, a fecha de 2021 se calculaba que el peso de los drivers es el 60% de la totalidad del kernel.
-
-Por lo tanto debemos evaluar;
-
-Que arquitectura es más eficiente en consumo energético.
-
-De nada nos sirve tener un hermoso data center si estando a un 5% de exigencia consume tanto que necesita una central nuclear japonesa.
-
-En este sentido se debe evaluar el proceso de fabricación que tiene tanto el CPU como la memoria RAM. A menor tamaño de fabricación de los transistores, menor consumo energético, menor generación de calor y mayor eficiencia.
-
-Por último, el propio procesador y su arquitectura determinará que tanta energía necesita; ARM es la ganadora en eficiencia por vatio de consumo, ya que utiliza un conjunto de set de instrucciones reducido por defecto y una integración entre núcleos de alta eficiencia y potencia. Tanto AMD e Intel con su x86_64 como la open source RISC-V tienen soluciones parecidas pero sin tanta eficiencia por vatio de consumo.
-
-Soporte
-
-Que el kernel Linux pueda iniciar y arrancar en una determinada arquitectura no quiere decir que tiene que soportar todos los dispositivos que le conectes a posteriori.
-
-Por ejemplo; según el fabricante del procesador ARM o RISC-V que utilices, puede ser que tenga (o no) el conjunto de instrucciones necesario para poder arrancar una placa de video externa dedicada como una NVIDIA. Hasta ahora, y en mi conocimiento, el único fabricante de ARM que soporta dGPU (dedicated Graphic Process Unit) es Ampere.
-
-Además debemos considerar siempre que en ARM y RISC-V cada fabricante determina el proceso de booteo por si mismo, por lo que la distribución que elijamos tiene que tener el respectivo soporte para el inicio de la máquina. ARM en sí no tiene una BIOS o UEFI, eso es de x86_64.
-
-Por último, a veces el soporte por parte del fabricante se vuelve nulo, a veces recae en la propia comunidad y a veces hay que pagar para tener soporte físico ante cualquier problema.
-
+Debian, Ubuntu, Mint	apt
+Fedora, Rocky Linux	dnf
+Arch, Manjaro	pacman
+Alpine Linux	apk
+Con estos gestores, puedes instalar programas fácilmente desde la terminal. Por ejemplo, en Ubuntu, para instalar algo usarías:
+
+bash
+Copiar código
+sudo apt install nombre_del_programa
+Uso básico de la terminal
+Linux se puede usar tanto desde la terminal como con un entorno gráfico (escritorio). Aquí algunos comandos básicos para empezar:
+
+Ver el contenido de un archivo:
+bash
+Copiar código
+cat archivo.txt
+Listar archivos en un directorio:
+bash
+Copiar código
+ls
+Buscar una palabra en un archivo:
+bash
+Copiar código
+grep "palabra" archivo.txt
+Mover un archivo:
+bash
+Copiar código
+mv archivo_origen archivo_destino
+Copiar un archivo:
+bash
+Copiar código
+cp archivo_origen archivo_destino
+Seguridad en Linux
+Hay dos tipos de distribuciones en cuanto a actualizaciones:
+
+Fixed Release: Distribuciones como Red Hat o Ubuntu LTS sacan nuevas versiones cada cierto tiempo. Son más estables, pero no siempre tienen lo último.
+Rolling Release: Distribuciones como Arch Linux siempre están actualizadas con lo último, pero pueden ser más inestables si algún paquete tiene un error.
 Documentación
+Tener buena documentación es clave en Linux. Aquí dos grandes fuentes de información:
 
-No podes tener ni un sysadmin ni operadores en una herramienta que tengan todos los conocimientos en todo; el saber se transmite y se re aprende de lo escrito.
+Red Hat tiene su propia base de conocimiento (requiere cuenta de pago):
+Red Hat Knowledge Base
 
-Por lo tanto, a la hora de utilizar una distribución nos debemos fijar que documentación tenemos al alcance para realizar determinadas tareas, esto es por que los problemas que surgen en un Red Hat Enterprise Linux pueden no tener la misma solución que en un SUSE por las modificaciones a los paquetes que pueden realizar una u otra.
-
-Generalmente nos encontramos dos grandes vertientes;
-
-Las distribuciones detrás de un muro de pago en forma de cuenta con acceso desarrollador
-
-Acá se encuentra el foro de soluciones de RedHat; https://access.redhat.com/search/knowledgebase
-
-Las distribuciones con wikis y foros mantenidos por la comunidad
-
-Acá hay que hacer una enorme mención honorífica a la wiki de Arch Linux; https://wiki.archlinux.org/
-
-Personalmente, y muchos conocidos también, es la mejor wiki que existe en el mundo Linux, con información prácticamente aplicable a cualquier distribución.
-
-De igual forma los propios sysadmins deberán documentar la arquitectura interna.
-
+Arch Linux tiene una de las mejores wikis del mundo Linux:
+Arch Linux Wiki
