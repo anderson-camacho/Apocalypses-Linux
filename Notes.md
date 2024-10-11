@@ -65,4 +65,23 @@ Linux se puede usar tanto desde la **terminal** como con un entorno gráfico (es
 - **Ver el contenido de un archivo**:
   ```bash
   cat archivo.txt
-  ```
+
+- Listar archivos en un directorio:
+  ```bash
+  ls
+  
+- Buscar una palabra en un archivo:
+  ```bash
+  grep "palabra" archivo.txt
+- Mover un archivo:
+  ```bash
+  mv archivo_origen archivo_destino
+- Copiar un archivo:
+  ```bash
+cp archivo_origen archivo_destino
+
+##Seguridad en Linux
+Hay dos tipos de distribuciones en cuanto a actualizaciones:
+
+- Fixed Release: Distribuciones como Red Hat o Ubuntu LTS sacan nuevas versiones cada cierto tiempo. Son más estables, pero no siempre tienen lo último.
+- Rolling Release: Distribuciones como Arch Linux siempre están actualizadas con lo último, pero pueden ser más inestables si algún paquete tiene un error.
