@@ -78,10 +78,27 @@ Linux se puede usar tanto desde la **terminal** como con un entorno gráfico (es
   mv archivo_origen archivo_destino
 - Copiar un archivo:
   ```bash
-cp archivo_origen archivo_destino
+  cp archivo_origen archivo_destino
 
 ##Seguridad en Linux
 Hay dos tipos de distribuciones en cuanto a actualizaciones:
 
 - Fixed Release: Distribuciones como Red Hat o Ubuntu LTS sacan nuevas versiones cada cierto tiempo. Son más estables, pero no siempre tienen lo último.
 - Rolling Release: Distribuciones como Arch Linux siempre están actualizadas con lo último, pero pueden ser más inestables si algún paquete tiene un error.
+
+## Documentación
+
+Tener buena documentación es clave en Linux. Aquí te dejo algunas fuentes de información útiles:
+
+- **Red Hat** tiene su propia base de conocimiento (requiere cuenta de pago):  
+  [Red Hat Knowledge Base](https://access.redhat.com/search/knowledgebase)
+
+- **Arch Linux** tiene una de las mejores wikis del mundo Linux:  
+  [Arch Linux Wiki](https://wiki.archlinux.org/)
+
+- Un video útil de YouTube sobre Linux que te puede interesar:  
+  [Linux Video](https://www.youtube.com/watch?v=7Myy3kTnXgo)
+
+- Un artículo detallado sobre Linux que puedes consultar:  
+  [Informatica Apocalipsis - Linux](https://shyanjmc.com/informatica-apocalipsis/9-linux.html)
+
